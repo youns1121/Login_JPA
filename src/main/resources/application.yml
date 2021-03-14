@@ -17,10 +17,10 @@ spring:
 logging.level:
   org.hibernate.SQL: debug
   # org.hibernate.type: trace
-  org:
-    springframework:
-      security:
-        web: trace
-
-    zerock: debug
+#  org:
+#    springframework:
+#      security:
+#        web: trace
+#
+#    zerock: debug
 
