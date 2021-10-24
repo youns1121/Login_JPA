@@ -56,7 +56,7 @@ public class ClubMemberTest { // 100개의 계정 생성 테스트
 //    }
 
     @Test
-    public void testRead(){
+    public void testRead() {
 
         Optional<ClubMember> result = repository.findByEmail("user95@youns.com", false);
 
