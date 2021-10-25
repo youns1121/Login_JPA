@@ -23,8 +23,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests() // 요청에 의한 보안검사 시작
                 .anyRequest().authenticated() //어떤 요청에도 보안검사를 한다.
-                .and()
-                .formLogin();//보안 검증은 formLogin방식으로 하겠다.
+        .and()
+                .formLogin()//보안 검증은 formLogin방식으로 하겠다.
+                .loginPage("/login.html") //사용자 정의 로그인 페이지
+                .defaultSuccessUrl("/login.html?error=true")//로그인 실패 후 이동 페이지
+                .usernameParameter("username")//아이디 파라미터명 설정
+                .passwordParameter("password")//패스워드 파라미터명 설정
+                .loginProcessingUrl("/login")//로그인 Form Action Url
+//                .successHandler(loginSuccessHandler())//로그인 성공 후 핸들러 (해당 핸들러를 생성하여 핸들링 해준다.)
+//                .failureHandler(loginFailureHandler())//로그인 실패 후 핸들러 (해당 핸들러를 생성하여 핸들링 해준다.)
+                .permitAll();
+
     }
 
 
